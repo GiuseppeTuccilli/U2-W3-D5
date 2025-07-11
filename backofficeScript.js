@@ -37,7 +37,7 @@ if (prId) {
   heading.innerText = "Modifica Prodotto";
   endpointToUse = endpoint + "/" + prId;
   methodToUse = "PUT";
-  btnGroup.innerHTML += `<button onclick='elimina()' class="btn btn-danger mt-2" id="elimina">
+  btnGroup.innerHTML += `<button  class="btn btn-danger mt-2" id="elimina" data-bs-toggle="modal" data-bs-target="#staticBackdrop">
                 Elimina Prodotto
               </button>`;
 
@@ -111,6 +111,7 @@ form.addEventListener("submit", (e) => {
       if (res.ok) {
         console.log("successo");
         e.target.reset();
+        location.assign("./home.html");
       } else {
         throw new Error("res non è ok");
       }

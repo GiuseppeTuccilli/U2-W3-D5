@@ -1,4 +1,5 @@
 const endpoint = "https://striveschool-api.herokuapp.com/api/product/";
+const alert500 = document.getElementById("Alert500");
 
 const getData = function () {
   fetch(endpoint, {
@@ -11,11 +12,12 @@ const getData = function () {
       if (res.ok) {
         return res.json();
       } else {
-        throw new Error("la chiamata non torna 200");
+        throw new Error(`errore_${res.status}`);
       }
     })
     .then((data) => {
       console.log(data);
+      document.getElementById("spin-container").classList.add("d-none");
       const row = document.querySelector(".row");
       for (let i = 0; i < data.length; i++) {
         console.log(data[i]._id);
@@ -41,6 +43,21 @@ const getData = function () {
       }
     })
     .catch((er) => {
+      // uso lo stesso alert e ci cambio il testo a seconda dell'errore
+      alert500.classList.remove("d-none");
+      if (er.message === "errore_500") {
+        alert500.innerHTML = `C'è stato un problema, errore del server
+        <a href="https://www.google.com" class="alert-link">clicca quik</a> per
+        andare su Google.`;
+      } else if (er.message === "errore_400") {
+        alert500.innerHTML = `C'è stato un problema, errore nella richiesta
+        <a href="https://www.google.com" class="alert-link">clicca quik</a> per
+        andare su Google.`;
+      } else {
+        alert500.innerHTML = `C'è stato un problema, errore generico
+        <a href="https://www.google.com" class="alert-link">clicca quik</a> per
+        andare su Google.`;
+      }
       console.log("errore", er);
     });
 };

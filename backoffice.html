@@ -13,6 +13,116 @@
   </head>
   <body>
     <header>
+      <!-- Button trigger modal 
+      <button
+        type="button"
+        class="btn btn-primary"
+        data-bs-toggle="modal"
+        data-bs-target="#staticBackdrop1"
+      >
+        Launch static backdrop modal
+      </button> -->
+
+      <!-- Modal -->
+      <div
+        class="modal fade"
+        id="staticBackdrop1"
+        data-bs-backdrop="static"
+        data-bs-keyboard="false"
+        tabindex="-1"
+        aria-labelledby="staticBackdropLabel"
+        aria-hidden="true"
+      >
+        <div class="modal-dialog">
+          <div class="modal-content">
+            <div class="modal-header">
+              <h1 class="modal-title fs-5" id="staticBackdropLabel">
+                Reset Campi
+              </h1>
+              <button
+                type="button"
+                class="btn-close"
+                data-bs-dismiss="modal"
+                aria-label="Close"
+              ></button>
+            </div>
+            <div class="modal-body">Sicuro di voler resettare i campi?</div>
+            <div class="modal-footer">
+              <button
+                type="button"
+                class="btn btn-primary"
+                data-bs-dismiss="modal"
+                id="reset"
+              >
+                Resetta
+              </button>
+              <button
+                type="button"
+                class="btn btn-secondary"
+                data-bs-dismiss="modal"
+              >
+                Torna indietro
+              </button>
+            </div>
+          </div>
+        </div>
+      </div>
+      <!-- Button trigger modal 
+      <button
+        type="button"
+        class="btn btn-primary"
+        data-bs-toggle="modal"
+        data-bs-target="#staticBackdrop"
+      >
+        Launch static backdrop modal
+      </button> -->
+
+      <!-- Modal -->
+      <div
+        class="modal fade"
+        id="staticBackdrop"
+        data-bs-backdrop="static"
+        data-bs-keyboard="false"
+        tabindex="-1"
+        aria-labelledby="staticBackdropLabel"
+        aria-hidden="true"
+      >
+        <div class="modal-dialog">
+          <div class="modal-content">
+            <div class="modal-header">
+              <h1 class="modal-title fs-5" id="staticBackdropLabel">
+                Eliminazione prodotto
+              </h1>
+              <button
+                type="button"
+                class="btn-close"
+                data-bs-dismiss="modal"
+                aria-label="Close"
+              ></button>
+            </div>
+            <div class="modal-body">
+              Sei sicuro di voler eliminare il prodotto?
+            </div>
+            <div class="modal-footer">
+              <button
+                type="button"
+                class="btn btn-danger"
+                data-bs-dismiss="modal"
+                onclick="elimina()"
+              >
+                Elimina
+              </button>
+              <button
+                type="button"
+                class="btn btn-primary"
+                data-bs-dismiss="modal"
+              >
+                Torna indietro
+              </button>
+            </div>
+          </div>
+        </div>
+      </div>
       <nav class="navbar navbar-expand-lg bg-body-tertiary px-3">
         <div class="container-fluid">
           <a class="navbar-brand" href="#">E-COMMERCE</a>
@@ -34,8 +144,8 @@
                   >Home</a
                 >
               </li>
-              <li class="nav-item active">
-                <a class="nav-link" href="#">Backoffice</a>
+              <li class="nav-item">
+                <a class="nav-link active" href="#">Backoffice</a>
               </li>
             </ul>
             <form class="d-flex" role="search">
@@ -114,7 +224,11 @@
               <button type="submit" class="btn btn-success">Salva</button>
             </form>
             <div id="btnGroup">
-              <button class="btn btn-primary mt-2" id="reset">
+              <button
+                class="btn btn-primary mt-2"
+                data-bs-toggle="modal"
+                data-bs-target="#staticBackdrop1"
+              >
                 Resetta form
               </button>
               <!--<button class="btn btn-danger mt-2" id="elimina">
