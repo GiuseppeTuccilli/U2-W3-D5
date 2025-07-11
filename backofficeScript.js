@@ -29,6 +29,20 @@ const elimina = function () {
       }
     })
     .catch((er) => {
+      alert500.classList.remove("d-none");
+      if (er.message === "errore_500") {
+        alert500.innerHTML = `C'è stato un problema, errore del server
+        <a href="https://www.google.com" class="alert-link">clicca quik</a> per
+        andare su Google.`;
+      } else if (er.message === "errore_400") {
+        alert500.innerHTML = `C'è stato un problema, errore nella richiesta
+        <a href="https://www.google.com" class="alert-link">clicca quik</a> per
+        andare su Google.`;
+      } else {
+        alert500.innerHTML = `C'è stato un problema, errore generico
+        <a href="https://www.google.com" class="alert-link">clicca quik</a> per
+        andare su Google.`;
+      }
       console.log("errore", er);
     });
 };
@@ -51,7 +65,7 @@ if (prId) {
       if (res.ok) {
         return res.json();
       } else {
-        throw new Error("non torna 200");
+        throw new Error(`errore_${res.status}`);
       }
     })
     .then((data) => {
@@ -63,6 +77,20 @@ if (prId) {
       priceInput.value = data.price;
     })
     .catch((er) => {
+      alert500.classList.remove("d-none");
+      if (er.message === "errore_500") {
+        alert500.innerHTML = `C'è stato un problema, errore del server
+        <a href="https://www.google.com" class="alert-link">clicca quik</a> per
+        andare su Google.`;
+      } else if (er.message === "errore_400") {
+        alert500.innerHTML = `C'è stato un problema, errore nella richiesta
+        <a href="https://www.google.com" class="alert-link">clicca quik</a> per
+        andare su Google.`;
+      } else {
+        alert500.innerHTML = `C'è stato un problema, errore generico
+        <a href="https://www.google.com" class="alert-link">clicca quik</a> per
+        andare su Google.`;
+      }
       console.log("errore", er);
     });
 } else {
@@ -113,10 +141,24 @@ form.addEventListener("submit", (e) => {
         e.target.reset();
         location.assign("./home.html");
       } else {
-        throw new Error("res non è ok");
+        throw new Error(`errore_${res.status}`);
       }
     })
     .catch((er) => {
+      alert500.classList.remove("d-none");
+      if (er.message === "errore_500") {
+        alert500.innerHTML = `C'è stato un problema, errore del server
+        <a href="https://www.google.com" class="alert-link">clicca quik</a> per
+        andare su Google.`;
+      } else if (er.message === "errore_400") {
+        alert500.innerHTML = `C'è stato un problema, errore nella richiesta
+        <a href="https://www.google.com" class="alert-link">clicca quik</a> per
+        andare su Google.`;
+      } else {
+        alert500.innerHTML = `C'è stato un problema, errore generico
+        <a href="https://www.google.com" class="alert-link">clicca quik</a> per
+        andare su Google.`;
+      }
       console.log("errore", er);
     });
 });

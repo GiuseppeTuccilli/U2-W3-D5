@@ -18,7 +18,7 @@ fetch(endpoint + "/" + prId, {
       console.log(res);
       return res.json();
     } else {
-      throw new Error("la chiamata non è ok");
+      throw new Error(`errore_${res.status}`);
     }
   })
   .then((data) => {
@@ -31,5 +31,19 @@ fetch(endpoint + "/" + prId, {
     brand.innerText = data.brand;
   })
   .catch((er) => {
+    alert500.classList.remove("d-none");
+    if (er.message === "errore_500") {
+      alert500.innerHTML = `C'è stato un problema, errore del server
+        <a href="https://www.google.com" class="alert-link">clicca quik</a> per
+        andare su Google.`;
+    } else if (er.message === "errore_400") {
+      alert500.innerHTML = `C'è stato un problema, errore nella richiesta
+        <a href="https://www.google.com" class="alert-link">clicca quik</a> per
+        andare su Google.`;
+    } else {
+      alert500.innerHTML = `C'è stato un problema, errore generico
+        <a href="https://www.google.com" class="alert-link">clicca quik</a> per
+        andare su Google.`;
+    }
     console.log("errore", er);
   });
