@@ -25,7 +25,7 @@ const elimina = function () {
         console.log("eliminato");
         location.assign("./home.html");
       } else {
-        throw new Error("la chiamata non è ok");
+        throw new Error(`errore_${res.status}`);
       }
     })
     .catch((er) => {
