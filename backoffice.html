@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>E-Commerce</title>
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.7/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+      integrity="sha384-LN+7fdVzj6u52u30Kp6M/trliBMCMKTyK833zpbD+pXdCLuTusPj697FH4R/5mcr"
+      crossorigin="anonymous"
+    />
+  </head>
+  <body>
+    <header>
+      <nav class="navbar navbar-expand-lg bg-body-tertiary px-3">
+        <div class="container-fluid">
+          <a class="navbar-brand" href="#">E-COMMERCE</a>
+          <button
+            class="navbar-toggler"
+            type="button"
+            data-bs-toggle="collapse"
+            data-bs-target="#navbarSupportedContent"
+            aria-controls="navbarSupportedContent"
+            aria-expanded="false"
+            aria-label="Toggle navigation"
+          >
+            <span class="navbar-toggler-icon"></span>
+          </button>
+          <div class="collapse navbar-collapse" id="navbarSupportedContent">
+            <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+              <li class="nav-item">
+                <a class="nav-link" aria-current="page" href="./home.html"
+                  >Home</a
+                >
+              </li>
+              <li class="nav-item active">
+                <a class="nav-link" href="#">Backoffice</a>
+              </li>
+            </ul>
+            <form class="d-flex" role="search">
+              <input
+                class="form-control me-2"
+                type="search"
+                placeholder="Search"
+                aria-label="Search"
+              />
+              <button class="btn btn-outline-success" type="submit">
+                Search
+              </button>
+            </form>
+          </div>
+        </div>
+      </nav>
+    </header>
+    <main>
+      <h1 class="text-center" id="heading"></h1>
+      <div class="container">
+        <div class="row d-flex justify-content-center">
+          <div class="col col-12 col-md-6">
+            <form id="form">
+              <div class="mb-3">
+                <label for="Nome" class="form-label">Nome Prodotto</label>
+                <input
+                  type="text"
+                  class="form-control"
+                  id="Nome"
+                  aria-describedby="emailHelp"
+                  required
+                />
+              </div>
+              <div class="mb-3">
+                <label for="Descrizione" class="form-label">Descrizione</label>
+                <textarea
+                  type="text"
+                  class="form-control"
+                  id="Descrizione"
+                  aria-describedby="emailHelp"
+                  required
+                >
+                </textarea>
+              </div>
+              <div class="mb-3">
+                <label for="Brand" class="form-label">Brand</label>
+                <input
+                  type="text"
+                  class="form-control"
+                  id="Brand"
+                  aria-describedby="emailHelp"
+                  required
+                />
+              </div>
+              <div class="mb-3">
+                <label for="Image-Url" class="form-label">Url Immagine</label>
+                <input
+                  type="text"
+                  class="form-control"
+                  id="Image-Url"
+                  aria-describedby="emailHelp"
+                  required
+                />
+              </div>
+              <div class="mb-3">
+                <label for="Price" class="form-label">Prezzo</label>
+                <input
+                  type="number"
+                  class="form-control"
+                  id="Price"
+                  aria-describedby="emailHelp"
+                  required
+                />
+              </div>
+
+              <button type="submit" class="btn btn-success">Salva</button>
+            </form>
+            <div id="btnGroup">
+              <button class="btn btn-primary mt-2" id="reset">
+                Resetta form
+              </button>
+              <!--<button class="btn btn-danger mt-2" id="elimina">
+                Elimina Prodotto
+              </button>-->
+            </div>
+          </div>
+        </div>
+      </div>
+    </main>
+    <script
+      src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.7/dist/js/bootstrap.bundle.min.js"
+      integrity="sha384-ndDqU0Gzau9qJ1lfW4pNLlhNTkCfHzAVBReH9diLvGRem5+R9g2FzA8ZGN954O5Q"
+      crossorigin="anonymous"
+    ></script>
+    <script src="./backofficeScript.js"></script>
+  </body>
+</html>
