@@ -10,6 +10,7 @@ const imgInput = document.getElementById("Image-Url");
 const priceInput = document.getElementById("Price");
 const btnGroup = document.getElementById("btnGroup");
 const heading = document.getElementById("heading");
+const alert500 = document.getElementById("Alert500");
 
 const reset = document.getElementById("reset");
 const elimina = function () {

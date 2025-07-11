@@ -6,6 +6,7 @@ const nome = document.querySelector(".card h5");
 const des = document.getElementById("des");
 const price = document.getElementById("price");
 const brand = document.getElementById("brand");
+const alert500 = document.getElementById("Alert500");
 
 fetch(endpoint + "/" + prId, {
   headers: {
