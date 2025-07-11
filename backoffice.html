@@ -11,7 +11,7 @@
       crossorigin="anonymous"
     />
   </head>
-  <body>
+  <body class="bg-black">
     <header>
       <!-- Button trigger modal 
       <button
@@ -155,7 +155,7 @@
                 placeholder="Search"
                 aria-label="Search"
               />
-              <button class="btn btn-outline-success" type="submit">
+              <button class="btn btn-outline-danger" type="submit">
                 Search
               </button>
             </form>
@@ -164,13 +164,15 @@
       </nav>
     </header>
     <main>
-      <h1 class="text-center" id="heading"></h1>
+      <h1 class="text-center text-white mt-3" id="heading"></h1>
       <div class="container">
         <div class="row d-flex justify-content-center">
           <div class="col col-12 col-md-6">
-            <form id="form">
+            <form id="form" class="border border-1 border-danger p-2">
               <div class="mb-3">
-                <label for="Nome" class="form-label">Nome Prodotto</label>
+                <label for="Nome" class="form-label text-white"
+                  >Nome Prodotto</label
+                >
                 <input
                   type="text"
                   class="form-control"
@@ -180,7 +182,9 @@
                 />
               </div>
               <div class="mb-3">
-                <label for="Descrizione" class="form-label">Descrizione</label>
+                <label for="Descrizione" class="form-label text-white"
+                  >Descrizione</label
+                >
                 <textarea
                   type="text"
                   class="form-control"
@@ -191,7 +195,7 @@
                 </textarea>
               </div>
               <div class="mb-3">
-                <label for="Brand" class="form-label">Brand</label>
+                <label for="Brand" class="form-label text-white">Brand</label>
                 <input
                   type="text"
                   class="form-control"
@@ -201,7 +205,9 @@
                 />
               </div>
               <div class="mb-3">
-                <label for="Image-Url" class="form-label">Url Immagine</label>
+                <label for="Image-Url" class="form-label text-white"
+                  >Url Immagine</label
+                >
                 <input
                   type="text"
                   class="form-control"
@@ -211,7 +217,7 @@
                 />
               </div>
               <div class="mb-3">
-                <label for="Price" class="form-label">Prezzo</label>
+                <label for="Price" class="form-label text-white">Prezzo</label>
                 <input
                   type="number"
                   class="form-control"

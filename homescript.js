@@ -23,7 +23,7 @@ const getData = function () {
         console.log(data[i]._id);
         row.innerHTML += `
       <div class="col col-12 col-md-6 col-lg-3">
-            <div class="card">
+            <div class="card border border-1 border-danger">
               <a href='./datails.html?id=${data[i]._id}'><img
                 
                 src='${data[i].imageUrl}'
